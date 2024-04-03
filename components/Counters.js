@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { propTypes } from 'react-bootstrap/esm/Image';
 
-function Counter() {
+function Counter({ title }) {
   const [value, setValue] = useState(0);
 
   const handleClick = (action) => {
@@ -22,7 +23,7 @@ function Counter() {
 
   return (
     <>
-      <h1>Counter</h1>
+      <h1>Counter for {title}</h1>
       <h2>{value}</h2>
       <button type="button" onClick={() => handleClick('Increment')}>Increment</button>
       <button type="button" onClick={() => handleClick('Decrement')}>Decrement</button>
@@ -32,3 +33,11 @@ function Counter() {
 }
 
 export default Counter;
+
+Counter.propTypes = {
+  title: propTypes.string,
+};
+
+Counter.defaultProps = {
+  title: 'an Individual',
+};
