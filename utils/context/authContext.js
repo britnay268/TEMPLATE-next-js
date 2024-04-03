@@ -23,6 +23,7 @@ const AuthProvider = (props) => {
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((fbUser) => {
+      // If there is a firebase User
       if (fbUser) {
         setUser(fbUser);
       } else {
