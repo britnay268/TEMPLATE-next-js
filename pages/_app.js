@@ -5,6 +5,7 @@ import '../styles/globals.css';
 import { AuthProvider } from '../utils/context/authContext'; // TODO: COMMENT IN FOR AUTH
 import ViewDirectorBasedOnUserAuthStatus from '../utils/ViewDirector'; // TODO: COMMENT IN FOR AUTH
 
+// This is the first thing that loads when the app loads
 function MyApp({ Component, pageProps }) {
   return (
     <>
