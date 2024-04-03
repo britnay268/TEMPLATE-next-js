@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { propTypes } from 'react-bootstrap/esm/Image';
+import PropTypes from 'prop-types';
 
 function Counter({ title }) {
   const [value, setValue] = useState(0);
@@ -25,9 +25,9 @@ function Counter({ title }) {
     <>
       <h1>Counter for {title}</h1>
       <h2>{value}</h2>
-      <button type="button" onClick={() => handleClick('Increment')}>Increment</button>
-      {value === 0 ? '' : <button type="button" onClick={() => handleClick('Decrement')}>Decrement</button>}
-      <button type="button" onClick={() => handleClick('Reset')}>Reset</button>
+      <button type="button" className={value <= 0 ? 'btn btn-danger' : 'btn btn-success'} onClick={() => handleClick('Increment')}>Increment</button>
+      {value === 0 ? '' : <button type="button" className="btn btn-danger" onClick={() => handleClick('Decrement')}>Decrement</button>}
+      <button type="button" className="btn btn-primary" onClick={() => handleClick('Reset')}>Reset</button>
     </>
   );
 }
@@ -35,7 +35,7 @@ function Counter({ title }) {
 export default Counter;
 
 Counter.propTypes = {
-  title: propTypes.string,
+  title: PropTypes.string,
 };
 
 Counter.defaultProps = {
